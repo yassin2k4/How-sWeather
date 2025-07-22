@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body class="default-bg">
+    <div class="container">
+        <div class="card" role="main">
+            <div class="search-bar">
+                <input 
+                    type="text" 
+                    id="cityInput" 
+                    placeholder="Enter city name..." 
+                    aria-label="City name input"
+                    oninput="fetchCitySuggestions()"
+                >
+                <div id="suggestions" class="suggestions"></div>
+                <button onclick="getWeather()" aria-label="Search weather">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </button>
+            </div>
+            <div id="weatherInfo" aria-live="polite">
+                <h2 id="cityName">Enter a city</h2>
+                <div id="temperature">--°C</div>
+                <div id="description">---</div>
+                <div class="details">
+                    <span id="humidity">Humidity: --%</span>
+                    <span id="wind">Wind: -- km/h</span>
+                </div>
+            </div>
+            <div id="errorMessage" role="alert">City not found!</div>
+            <button class="chat-toggle" onclick="toggleChat()" aria-label="Toggle chatbot">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+            </button>
+        </div>
+        <div class="chat-container" id="chatContainer">
+            <div class="chat-header">
+                <h3>Weather Assistant</h3>
+                <button onclick="toggleChat()" aria-label="Close chatbot">×</button>
+            </div>
+            <div class="chat-body" id="chatBody"></div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" placeholder="Ask about the weather..." aria-label="Chat input">
+                <button onclick="sendChatMessage()" aria-label="Send chat message">Send</button>
+            </div>
+        </div>
+        <div class="forecast">
+            <h3>5-Day Forecast</h3>
+            <div class="forecast-grid" id="forecast"></div>
+        </div>
+    </div>
+</body>
+</html>
