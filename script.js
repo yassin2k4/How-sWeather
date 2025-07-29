@@ -220,11 +220,8 @@ The user asked: "${message}"
 ---
 
 🔧 **Instructions:**
-Respond with a helpful and structured answer using the following format:
-1. **🌞 UV Risk:** Short sentence.
-2. **🧴 Protection Tips:** 3 clear bullet points.
-3. **🥵 Heatstroke Warning:** A one-liner if needed.
-4. **🧊 Final Tip:** Encourage hydration or indoor breaks.
+THE MOST IMPORTANT THING DON'T ANSAWER THE USER ABOUT SMTH HE DIDNT ASK FOR.
+
 
 Keep it clear, no waffle. Use markdown-style bullets and emojis.
 `;
